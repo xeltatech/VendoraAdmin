@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vendora Admin
+
+Admin panel for Vendora application built with Next.js 15.
+
+## Project Structure
+
+```
+vendora-admin/
+├── src/
+│   ├── app/              # Next.js App Router
+│   │   ├── (routes)/     # Route groups
+│   │   │   ├── login/    # Login page
+│   │   │   └── home/     # Home page
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   ├── features/         # Feature-based modules
+│   │   ├── auth/         # Authentication feature
+│   │   │   ├── components/
+│   │   │   └── hooks/
+│   │   └── home/         # Home feature
+│   │       └── components/
+│   └── shared/           # Shared resources
+│       ├── components/   # Reusable components
+│       ├── auth/         # Auth utilities
+│       ├── types/        # TypeScript types
+│       └── utils/        # Utility functions
+├── public/               # Static assets
+└── package.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20.x or higher
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### Development
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+# or
+yarn build
+```
 
-## Learn More
+### Start Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+# or
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js 15.5.6** - React framework
+- **React 19.1.0** - UI library
+- **TypeScript 5** - Type safety
+- **Tailwind CSS 4** - Styling
+- **ESLint** - Code linting
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application uses a custom color palette defined in `globals.css`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Primary colors (black, gray)
+- Orange accent colors
+- Red colors for errors
+- Typography using system fonts
+
+## Development Guidelines
+
+1. Follow the feature-based architecture
+2. Use TypeScript for type safety
+3. Create reusable components in `shared/components`
+4. Keep feature-specific components in their respective feature folders
+5. Use custom hooks for business logic
