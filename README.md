@@ -2,33 +2,6 @@
 
 Admin panel for Vendora application built with Next.js 15.
 
-## Project Structure
-
-```
-vendora-admin/
-├── src/
-│   ├── app/              # Next.js App Router
-│   │   ├── (routes)/     # Route groups
-│   │   │   ├── login/    # Login page
-│   │   │   └── home/     # Home page
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── globals.css
-│   ├── features/         # Feature-based modules
-│   │   ├── auth/         # Authentication feature
-│   │   │   ├── components/
-│   │   │   └── hooks/
-│   │   └── home/         # Home feature
-│   │       └── components/
-│   └── shared/           # Shared resources
-│       ├── components/   # Reusable components
-│       ├── auth/         # Auth utilities
-│       ├── types/        # TypeScript types
-│       └── utils/        # Utility functions
-├── public/               # Static assets
-└── package.json
-```
-
 ## Getting Started
 
 ### Prerequisites
