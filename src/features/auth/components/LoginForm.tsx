@@ -13,6 +13,7 @@ export function LoginForm() {
     setPassword,
     usernameError,
     passwordError,
+    generalError,
     loading,
     handleSubmit
   } = useLogin()
@@ -27,6 +28,12 @@ export function LoginForm() {
             Ingresa tus credenciales para acceder al sistema
           </p>
         </div>
+
+        {generalError && (
+          <div className="mb-6 p-4 bg-red-50 border border-red1 rounded-lg">
+            <p className="text-sm text-red1">{generalError}</p>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <Input

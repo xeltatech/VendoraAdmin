@@ -1,12 +1,16 @@
 'use client'
 
 import { useState } from 'react'
+import { AuthService } from '@/shared/api/vendora-api'
+import { tokenStorage } from '@/shared/auth/tokenStorage'
+import '@/shared/api/config'
 
 export function useLogin() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [usernameError, setUsernameError] = useState('')
   const [passwordError, setPasswordError] = useState('')
+  const [generalError, setGeneralError] = useState('')
   const [loading, setLoading] = useState(false)
 
   const validateForm = () => {
@@ -31,21 +35,41 @@ export function useLogin() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setGeneralError('')
 
     if (!validateForm()) {
       return
     }
 
     setLoading(true)
-    // Add login logic here
-    console.log('Login:', { username, password })
 
-    // Simulate API call
-    setTimeout(() => {
-      setLoading(false)
+    try {
+      const response = await AuthService.authControllerLogin({
+        requestBody: {
+          email: username,
+          password: password
+        }
+      })
+
+      // Store tokens and user data
+      tokenStorage.setAccessToken(response.accessToken)
+      tokenStorage.setRefreshToken(response.refreshToken)
+      tokenStorage.setUser(response.user)
+
       // Redirect to home on success
       window.location.href = '/home'
-    }, 1000)
+    } catch (error: unknown) {
+      console.error('Login error:', error)
+      const apiError = error as { status?: number }
+
+      if (apiError.status === 401) {
+        setGeneralError('Credenciales inválidas. Por favor, verifica tu usuario y contraseña.')
+      } else {
+        setGeneralError('Error al iniciar sesión. Por favor, intenta de nuevo.')
+      }
+    } finally {
+      setLoading(false)
+    }
   }
 
   return {
@@ -55,6 +79,7 @@ export function useLogin() {
     setPassword,
     usernameError,
     passwordError,
+    generalError,
     loading,
     handleSubmit
   }

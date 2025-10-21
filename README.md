@@ -12,16 +12,12 @@ Admin panel for Vendora application built with Next.js 15.
 ### Installation
 
 ```bash
-npm install
-# or
-yarn install
+yarn
 ```
 
 ### Development
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
@@ -30,17 +26,19 @@ Open [http://localhost:3001](http://localhost:3001) to view the application.
 ### Build
 
 ```bash
-npm run build
-# or
 yarn build
 ```
 
 ### Start Production
 
 ```bash
-npm run start
-# or
 yarn start
+```
+
+# If API spec changes, regenerate the client:
+
+```bash
+npm run gen:api
 ```
 
 ## Technologies
