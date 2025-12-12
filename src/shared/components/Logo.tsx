@@ -15,7 +15,7 @@ export function Logo() {
           />
         </svg>
       </div>
-      <span className="text-xl font-bold text-black2">FootHub</span>
+      <span className="text-xl font-bold text-black2">Vendora</span>
     </div>
   )
 }

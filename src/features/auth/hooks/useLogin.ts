@@ -44,7 +44,7 @@ export function useLogin() {
     setLoading(true)
 
     try {
-      const response = await AuthService.authControllerLogin({
+      /*const response = await AuthService.authControllerLogin({
         requestBody: {
           email: username,
           password: password
@@ -54,7 +54,11 @@ export function useLogin() {
       // Store tokens and user data
       tokenStorage.setAccessToken(response.accessToken)
       tokenStorage.setRefreshToken(response.refreshToken)
-      tokenStorage.setUser(response.user)
+      tokenStorage.setUser(response.user)*/
+
+      tokenStorage.setAccessToken('aqui-va-el-token-de-acceso')
+      tokenStorage.setRefreshToken('aqui-va-el-token-de-refresh')
+      tokenStorage.setUser({ id: '1', email: username, name: 'Usuario de Ejemplo' })
 
       // Redirect to home on success
       window.location.href = '/home'

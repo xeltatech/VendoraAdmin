@@ -1,0 +1,15 @@
+{
+  "login": "Iniciar sesión",
+  "loginHere": "INGRESA AQUÍ",
+  "enterCredentials": "Ingresa tus credenciales para acceder al sistema",
+  "username": "Usuario",
+  "enterUsername": "Ingresa tu usuario",
+  "password": "Contraseña",
+  "enterPassword": "Ingresa tu contraseña",
+  "loggingIn": "Iniciando sesión...",
+  "home": "Inicio",
+  "orders": "Pedidos",
+  "clients": "Clientes",
+  "logout": "Cerrar sesión",
+  "welcome": "Bienvenido"
+}

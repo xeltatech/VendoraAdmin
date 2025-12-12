@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { Logo } from './Logo'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -13,12 +14,13 @@ interface SidebarProps {
 }
 
 export function Sidebar({ user }: SidebarProps) {
+  const t = useTranslations()
   const pathname = usePathname()
 
   const menuItems = [
-    { icon: '🏠', label: 'Inicio', href: '/home' },
-    { icon: '📦', label: 'Pedidos', href: '/orders' },
-    { icon: '👥', label: 'Clientes', href: '/clients' }
+    { icon: '🏠', label: t('home'), href: '/home' },
+    { icon: '📦', label: t('orders'), href: '/orders' },
+    { icon: '👥', label: t('clients'), href: '/clients' }
   ]
 
   return (
@@ -68,7 +70,7 @@ export function Sidebar({ user }: SidebarProps) {
           className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-gray-800 hover:text-white transition-colors w-full"
         >
           <span className="text-xl">🚪</span>
-          <span>Cerrar sesión</span>
+          <span>{t('logout')}</span>
         </button>
       </div>
     </aside>

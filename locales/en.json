@@ -1,0 +1,15 @@
+{
+  "login": "Log in",
+  "loginHere": "LOG IN HERE",
+  "enterCredentials": "Enter your credentials to access the system",
+  "username": "Username",
+  "enterUsername": "Enter your username",
+  "password": "Password",
+  "enterPassword": "Enter your password",
+  "loggingIn": "Logging in...",
+  "home": "Home",
+  "orders": "Orders",
+  "clients": "Clients",
+  "logout": "Log out",
+  "welcome": "Welcome"
+}
