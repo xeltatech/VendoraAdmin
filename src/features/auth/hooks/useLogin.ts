@@ -56,9 +56,14 @@ export function useLogin() {
       tokenStorage.setRefreshToken(response.refreshToken)
       tokenStorage.setUser(response.user)*/
 
-      tokenStorage.setAccessToken('aqui-va-el-token-de-acceso')
-      tokenStorage.setRefreshToken('aqui-va-el-token-de-refresh')
+      // Set dummy tokens in localStorage
+      const dummyToken = 'dummy-access-token-for-dev'
+      tokenStorage.setAccessToken(dummyToken)
+      tokenStorage.setRefreshToken('dummy-refresh-token-for-dev')
       tokenStorage.setUser({ id: '1', email: username, name: 'Usuario de Ejemplo' })
+
+      // Also set token in cookies for middleware
+      document.cookie = `vendora_admin_access=${dummyToken}; path=/; max-age=86400`
 
       // Redirect to home on success
       window.location.href = '/home'
