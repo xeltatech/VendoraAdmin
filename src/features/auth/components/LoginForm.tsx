@@ -7,7 +7,7 @@ import { Button } from '@/shared/components/Button'
 import { useLogin } from '../hooks/useLogin'
 
 export function LoginForm() {
-  const t = useTranslations()
+  const t = useTranslations('login')
   const {
     username,
     setUsername,

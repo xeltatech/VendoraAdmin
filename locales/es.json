@@ -1,15 +1,333 @@
 {
-  "login": "Iniciar sesión",
-  "loginHere": "INGRESA AQUÍ",
-  "enterCredentials": "Ingresa tus credenciales para acceder al sistema",
-  "username": "Usuario",
-  "enterUsername": "Ingresa tu usuario",
-  "password": "Contraseña",
-  "enterPassword": "Ingresa tu contraseña",
-  "loggingIn": "Iniciando sesión...",
-  "home": "Inicio",
-  "orders": "Pedidos",
-  "clients": "Clientes",
-  "logout": "Cerrar sesión",
-  "welcome": "Bienvenido"
+  "routes": {
+    "clients": "/clients",
+    "onboarding": "/onboarding",
+    "root": "/",
+    "fallback": "/clients"
+  },
+  "common": {
+    "save": "Guardar y Salir",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "back": "Anterior",
+    "required": "*",
+    "cancel": "Cancelar",
+    "accept": "Aceptar",
+    "activo": "Activo",
+    "inactivo": "Inactivo"
+  },
+  "clientList": {
+    "title": "Gestión de Clientes",
+    "subtitle": "Administra los clientes y sus configuraciones de catálogo",
+    "searchPlaceholder": "Buscar por nombre o NIT...",
+    "filterAll": "Todos los estados",
+    "filterActive": "Activo",
+    "filterInactive": "Inactivo",
+    "createClient": "Crear Cliente",
+    "table": {
+      "razonSocial": "Razón Social",
+      "nit": "NIT",
+      "ciudad": "Ciudad",
+      "estado": "Estado",
+      "fechaCreacion": "Fecha de Creación",
+      "acciones": "Acciones",
+      "verDetalle": "Ver Detalle"
+    },
+    "noClients": "No se encontraron clientes"
+  },
+  "login": {
+    "login": "Log in",
+    "loginHere": "LOG IN AQUÍ",
+    "enterCredentials": "Ingresa tus credenciales para continuar",
+    "username": "Usuario",
+    "enterUsername": "Ingresa el usuario",
+    "password": "Contraseña",
+    "enterPassword": "Ingresa la contraseña",
+    "loggingIn": "Ingresando...",
+    "home": "Home",
+    "orders": "Ordenes",
+    "clients": "Clientes",
+    "logout": "Log out",
+    "welcome": "Bienvenido",
+    "clientCreated": "¡Cliente creado exitosamente!",
+    "clientOnboarding": "Onboarding de Cliente",
+    "createClient": "Crear Cliente",
+    "clientName": "Nombre del Cliente",
+    "enterClientName": "Ingresa el nombre del cliente",
+    "clientEmail": "Correo Electrónico del Cliente",
+    "enterClientEmail": "Ingresa el correo electrónico del cliente",
+    "submit": "Enviar",
+    "creatingClient": "Creando Cliente..."
+  },
+"onboarding": {
+  "title": "Onboarding de Cliente",
+  "stepLabel": "Paso {currentStep} de {total}",
+  "steps": {
+    "cliente": "Cliente",
+    "marcas": "Marcas",
+    "estructura": "Estructura",
+    "excel": "Excel",
+    "preferencias": "Preferencias",
+    "resumen": "Resumen"
+  },
+  "alerts": {
+    "saveAndExit": "Datos guardados. Puede continuar más tarde.",
+    "clientCreated": "¡Cliente creado exitosamente!"
+  }
+},
+"step1": {
+  "title": "Datos Básicos del Cliente",
+  "subtitle": "Información general y contacto principal del cliente",
+  "fields": {
+    "razonSocial": {
+      "label": "Razón Social",
+      "placeholder": "Ej: Calzados Andina S.A.",
+      "error": "La razón social es obligatoria"
+    },
+    "nit": {
+      "label": "NIT",
+      "placeholder": "Ej: 900123456-7",
+      "error": "El NIT es obligatorio"
+    },
+    "pais": {
+      "label": "País",
+      "error": "El país es obligatorio"
+    },
+    "ciudad": {
+      "label": "Ciudad",
+      "placeholder": "Ej: Bogotá",
+      "error": "La ciudad es obligatoria"
+    },
+    "direccion": {
+      "label": "Dirección",
+      "placeholder": "Ej: Calle 123 #45-67",
+      "error": "La dirección es obligatoria"
+    },
+    "observaciones": {
+      "label": "Observaciones Internas",
+      "placeholder": "Notas internas sobre el cliente..."
+    }
+  },
+  "contacto": {
+    "title": "Contacto Principal",
+    "nombre": {
+      "label": "Nombre",
+      "error": "El nombre es obligatorio"
+    },
+    "correo": {
+      "label": "Correo",
+      "error": "El correo es obligatorio",
+      "errorInvalid": "Correo inválido"
+    },
+    "celular": {
+      "label": "Celular / WhatsApp",
+      "error": "El celular es obligatorio"
+    }
+  }
+},
+"step2": {
+  "title": "Marcas del Cliente",
+  "subtitle": "Configure las marcas que este cliente maneja en su catálogo",
+  "fields": {
+    "nombre": {
+      "label": "Nombre de la Marca",
+      "placeholder": "Ej: Nike, Adidas, etc."
+    },
+    "descripcion": {
+      "label": "Descripción",
+      "placeholder": "Descripción de la marca..."
+    },
+    "banner": {
+      "label": "Banner (URL de imagen)",
+      "placeholder": "https://example.com/banner.jpg"
+    }
+  },
+  "addBrand": "Agregar Otra Marca",
+  "alert": "Debe agregar al menos una marca"
+},
+"step3": {
+  "title": "Estructura de Productos",
+  "subtitle": "Defina cómo son los productos que este cliente maneja",
+  "templates": {
+    "title": "Plantillas Predefinidas",
+    "zapatos": "Usar plantilla de Zapatos",
+    "ropa": "Usar plantilla de Ropa",
+    "accesorios": "Usar plantilla de Accesorios",
+    "info": "O cree su propia estructura personalizada desde cero"
+  },
+  "categories": {
+    "newCategory": "Nueva Categoría",
+    "newSubcategory": "Nueva Subcategoría",
+    "newType": "Nuevo Tipo de Producto",
+    "addCategory": "Agregar Categoría",
+    "addSubcategory": "+ Subcategoría",
+    "addType": "+ Tipo"
+  },
+  "productStructure": {
+    "zapatos": {
+      "nombre": "Zapatos estándar",
+      "categories": {
+        "zapatos": "Zapatos",
+        "subcategories": {
+          "deportivos": "Deportivos",
+          "verano": "Verano",
+          "elegantes": "Elegantes"
+        },
+        "productTypes": {
+          "deportivos": "Zapatos Deportivos"
+        },
+        "attributes": {
+          "materialExterior": "Material exterior",
+          "materialInterior": "Material interior",
+          "tipoSuela": "Tipo de suela",
+          "genero": "Género"
+        },
+        "options": {
+          "cuero": "Cuero",
+          "sintetico": "Sintético",
+          "textil": "Textil",
+          "goma": "Goma",
+          "caucho": "Caucho",
+          "hombre": "Hombre",
+          "mujer": "Mujer",
+          "unisex": "Unisex"
+        }
+      }
+    },
+    "ropa": {
+      "nombre": "Ropa",
+      "categories": {
+        "ropa": "Ropa",
+        "subcategories": {
+          "camisetas": "Camisetas"
+        },
+        "productTypes": {
+          "camisetaBasica": "Camiseta Básica"
+        },
+        "attributes": {
+          "material": "Material",
+          "genero": "Género"
+        },
+        "options": {
+          "algodon": "Algodón",
+          "poliester": "Poliéster",
+          "mezcla": "Mezcla",
+          "hombre": "Hombre",
+          "mujer": "Mujer",
+          "unisex": "Unisex"
+        }
+      }
+    },
+    "accesorios": {
+      "nombre": "Accesorios",
+      "categories": {
+        "bolsos": "Bolsos",
+        "subcategories": {
+          "bolsosMano": "Bolsos de mano"
+        },
+        "productTypes": {
+          "bolsoCasual": "Bolso Casual"
+        },
+        "attributes": {
+          "material": "Material",
+          "uso": "Uso"
+        },
+        "options": {
+          "cuero": "Cuero",
+          "sintetico": "Sintético",
+          "lona": "Lona",
+          "casual": "Casual",
+          "oficina": "Oficina",
+          "viaje": "Viaje"
+        }
+      }
+    }
+  },
+  "alert": "Debe configurar al menos una categoría de producto"
+},
+"step4": {
+  "title": "Configuración del Modelo de Excel",
+  "subtitle": "Plantilla generada automáticamente según la estructura de productos",
+  "columnsTitle": "Columnas del Excel Generado",
+  "columns": {
+    "codigoReferencia": "Código de referencia *",
+    "nombreProducto": "Nombre del producto *",
+    "marca": "Marca *",
+    "categoria": "Categoría *",
+    "subcategoria": "Subcategoría / Tipo de producto *",
+    "descripcionCorta": "Descripción corta",
+    "descripcionLarga": "Descripción larga",
+    "color": "Color",
+    "talla": "Talla",
+    "precioMayorista": "Precio mayorista",
+    "precioSugerido": "Precio sugerido venta",
+    "sku": "SKU o código interno",
+    "imagenPrincipal": "Nombre archivo imagen principal",
+    "imagenesAdicionales": "Nombres archivos imágenes adicionales"
+  },
+  "downloadTemplate": "Descargar Plantilla Excel",
+  "note": "Los campos marcados con * son obligatorios. La plantilla se ajusta automáticamente según las categorías y atributos que configuró en el paso anterior.",
+  "noteLabel": "Nota:",
+  "alert": "En una aplicación real, esto descargaría un archivo Excel con estas columnas"
+},
+"step5": {
+  "title": "Preferencias del Catálogo",
+  "subtitle": "Configure la moneda e impuestos para el catálogo",
+  "moneda": {
+    "label": "Moneda",
+    "error": "La moneda es obligatoria",
+    "options": {
+      "cop": "Peso Colombiano (COP)",
+      "usd": "Dólar Estadounidense (USD)",
+      "eur": "Euro (EUR)",
+      "mxn": "Peso Mexicano (MXN)",
+      "ars": "Peso Argentino (ARS)"
+    }
+  },
+  "impuesto": {
+    "title": "Configuración de Impuesto",
+    "nombre": {
+      "label": "Nombre del Impuesto",
+      "placeholder": "Ej: IVA, VAT, GST",
+      "error": "El nombre del impuesto es obligatorio"
+    },
+    "porcentaje": {
+      "label": "Porcentaje",
+      "placeholder": "19",
+      "error": "El porcentaje es obligatorio",
+      "errorMin": "El porcentaje no puede ser negativo",
+      "errorMax": "El porcentaje no puede ser mayor a 100"
+    }
+  }
+},
+"step6": {
+  "title": "¡Configuración Completada!",
+  "subtitle": "El cliente ha sido configurado exitosamente",
+  "sections": {
+    "datosCliente": "Datos del Cliente",
+    "marcas": "Marcas",
+    "estructuraProductos": "Estructura de Productos",
+    "preferencias": "Preferencias del Catálogo",
+    "proximosPasos": "Próximos Pasos"
+  },
+  "fields": {
+    "razonSocial": "Razón Social",
+    "nit": "NIT",
+    "ciudad": "Ciudad",
+    "contacto": "Contacto",
+    "moneda": "Moneda",
+    "impuesto": "Impuesto"
+  },
+  "types": "tipos",
+  "actions": {
+    "downloadTemplate": "Descargar Plantilla Excel de Productos",
+    "goToProducts": "Ir a Pantalla de Productos",
+    "finishOnboarding": "Finalizar Onboarding"
+  },
+  "alert": "Descargando plantilla Excel..."
+},
+"stepper": {
+  "ariaLabel": "Progress",
+  "srOnly": "{stepName}"
+}
 }
